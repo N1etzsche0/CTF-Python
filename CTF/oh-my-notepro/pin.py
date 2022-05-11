@@ -5,13 +5,13 @@ probably_public_bits = [
     'CTF'# /etc/passwd
     'flask.app',# 默认值
     'Flask',# 默认值
-    '/usr/local/lib/python3.8/site-packages/flask/app.py' # 报错得到
+    '/usr/local/lib/python3.7/site-packages/flask/app.py', # 报错得到
 ]
 
 private_bits = [
-    '2485378023426',#  /sys/class/net/eth0/address 16进制转10进制
-    #machine_id由三个合并(docker就后两个)：1./etc/machine-id 2./proc/sys/kernel/random/boot_id 3./proc/self/cgroup
-    '1cc402dd0e11d5ae18db04a6de87223d9420323940c2a88d9d069e722915b32c93b8c2269a817e4dd23122549c1bdb8c'#  /proc/self/cgroup
+    '279873956892776',#  /sys/class/net/eth0/address 16进制转10进制
+    #machine_id由三个合并(docker就后1,3)：1./etc/machine-id 2./proc/sys/kernel/random/boot_id 3./proc/self/cgroup
+    '1408f836b0ca514d796cbf8960e45fa18688bda20ab2157a4a6e1ad8051c7349bb27f2f67f8150e8a3c111c61cfdaca1'#  /proc/self/cgroup
 ]
 
 h = hashlib.sha1()
