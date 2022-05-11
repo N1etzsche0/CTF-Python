@@ -7,7 +7,7 @@ from flask import request
 
 @app.route('/getUrl', methods=['GET', 'POST'])
 def getUrl():
-    url = request.args.get("url")
+    url = 
     host = parse.urlparse(url).hostname
     if host == 'suctf.cc': return "我扌 your problem? 111"
     parts = list(urlsplit(url))
