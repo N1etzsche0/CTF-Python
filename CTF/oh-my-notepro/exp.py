@@ -2,7 +2,7 @@ import requests
 import re
 import string
 import random
-from pin import solve
+from old_pin import solve
 
 
 def get_content(file, regexp):

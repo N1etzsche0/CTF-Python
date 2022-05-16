@@ -11,7 +11,7 @@ probably_public_bits = [
 private_bits = [
     '279873956892776',#  /sys/class/net/eth0/address 16进制转10进制
     #machine_id由三个合并(docker就后1,3)：1./etc/machine-id 2./proc/sys/kernel/random/boot_id 3./proc/self/cgroup
-    '1408f836b0ca514d796cbf8960e45fa18688bda20ab2157a4a6e1ad8051c7349bb27f2f67f8150e8a3c111c61cfdaca1'#  /proc/self/cgroup
+    'docker-8688bda20ab2157a4a6e1ad8051c7349bb27f2f67f8150e8a3c111c61cfdaca1.scope'#  /proc/self/cgroup
 ]
 
 h = hashlib.sha1()
